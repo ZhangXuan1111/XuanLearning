@@ -1,5 +1,6 @@
 #!/user/bin/env python3
 # -*- coding: utf-8 -*-
+from functools import reduce
 
 # 2、如何在一个函数内部修改全局变量?
 
@@ -37,18 +38,32 @@
 # b = a
 # print(a is b)
 
-def my_decorator(func):
-    def wrapper():
-        print("Before function call")
-        func()
-        print("After function call")
+# def my_decorator(func):
+#     def wrapper():
+#         print("Before function call")
+#         func()
+#         print("After function call")
+#
+#     return wrapper
+#
+#
+# @my_decorator
+# def say_hello():
+#     print("Hello!")
+#
+#
+# from functools import reduce
+#
+#
+# def f2(x, y):
+#     return x * 10 + y
+#
+#
+# nums = [1, 2, 3, 4, 6]
+# result = reduce(f2, nums)
+# print(result)
 
-    return wrapper
-
-
-@my_decorator
-def say_hello():
-    print("Hello!")
-
-
-say_hello()
+a =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = [num for num in a if num%2 > 0 ]
+print(result)
+print(4%2)
