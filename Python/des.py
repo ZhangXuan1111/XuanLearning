@@ -24,11 +24,31 @@
 
 # 列表［1,2,3,4,5］请使用 map 函数输出，并使用列表推导式输出大于10的数
 
-def dealNum(x):
-    return x * x
+# def dealNum(x):
+#     return x * x
+#
+# if __name__ == '__main__':
+#     nums = [1, 2, 3, 4, 5]
+#     result = map(dealNum, nums)
+#     filterNum = [num for num in list(result) if num > 10]
+#     print(filterNum)
 
-if __name__ == '__main__':
-    nums = [1, 2, 3, 4, 5]
-    result = map(dealNum, nums)
-    filterNum = [num for num in list(result) if num > 10]
-    print(filterNum)
+# a = [1,2,"hello",['python', 'C++']]
+# b = a
+# print(a is b)
+
+def my_decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+
+    return wrapper
+
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+
+say_hello()
